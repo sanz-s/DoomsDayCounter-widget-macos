@@ -1,4 +1,4 @@
-#Installing this is super easy! Just follow the steps below:
+# Installing this is super easy! Just follow the steps below:
 
 - Download the DoomsDayCounter.widget.zip file.
 - Move the file to ~/Library/Application Support/Übersicht/widgets.
