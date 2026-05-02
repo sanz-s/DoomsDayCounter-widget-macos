@@ -1,4 +1,4 @@
-const TARGET = new Date("2026-12-18T05:00:26Z");
+const TARGET = new Date("2026-12-17T05:00:26Z");
 
 const BG_VIDEO = "https://files.catbox.moe/hqf7pd.webm";
 
