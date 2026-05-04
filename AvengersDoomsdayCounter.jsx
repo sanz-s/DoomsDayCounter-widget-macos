@@ -1,9 +1,9 @@
-const TARGET = new Date("2026-12-17T05:00:26Z");
+const TARGET = new Date("2026-12-18T05:00:22Z");
 
 const BG_VIDEO = "https://files.catbox.moe/hqf7pd.webm";
 
 export const command = "date";        
-export const refreshFrequency = 1000; 
+export const refreshFrequency = 999; 
 
 export const className = `
   left: 20px;
@@ -126,26 +126,24 @@ function pad(n) {
 }
 
 function getTimeLeft() {
-    const now = new Date();
-    const diff = Math.max(0, TARGET - now);
+  const now = new Date();
+  const diff = Math.max(0, TARGET - now);
 
-    const totalSecs = Math.floor(diff / 1000);
-    const sec = totalSecs % 60;
-    const totalMins = Math.floor(totalSecs / 60);
-    const min = totalMins % 60;
-    const totalHrs = Math.floor(totalMins / 60);
-    const hours = totalHrs % 24;
+  const totalSecs = Math.floor(diff / 1000);
+  const sec = totalSecs % 60;
+  const min = Math.floor(totalSecs / 60) % 60;
+  const hours = Math.floor(totalSecs / 3600) % 24;
 
-    let months =
-        (TARGET.getFullYear() - now.getFullYear()) * 12 +
-        (TARGET.getMonth() - now.getMonth());
-    if (TARGET.getDate() < now.getDate()) months--;
-    months = Math.max(0, months);
+  let months =
+    (TARGET.getFullYear() - now.getFullYear()) * 12 +
+    (TARGET.getMonth() - now.getMonth());
+  if (now.getDate() > TARGET.getDate()) months--;
+  months = Math.max(0, months);
 
-    const refDate = new Date(now.getFullYear(), now.getMonth() + months, now.getDate());
-    const days = Math.max(0, Math.floor((TARGET - refDate) / 86400000));
+  const monthStart = new Date(now.getFullYear(), now.getMonth() + months, now.getDate() + 1);
+  const days = Math.max(0, Math.floor((TARGET - monthStart) / 86400000));
 
-    return { months, days, hours, min, sec };
+  return { months, days, hours, min, sec };
 }
 
 export const render = () => {
@@ -158,7 +156,7 @@ export const render = () => {
         { value: min, label: "Min" },
         { value: sec, label: "Sec" },
     ];
-Co
+
     return (
         <div className="doom-root">
             <video className="doom-video" autoPlay loop muted playsInline>
