@@ -5,4 +5,4 @@
 - Unzip the file.
 - That's it You can see the timer
 
-Visit Here: (https://tracesof.net/uebersicht-widgets/#DoomsDayCounter-widget-macos)[https://tracesof.net/uebersicht-widgets/#DoomsDayCounter-widget-macos]
+Visit Here: [https://tracesof.net/uebersicht-widgets/#DoomsDayCounter-widget-macos](https://tracesof.net/uebersicht-widgets/#DoomsDayCounter-widget-macos)
